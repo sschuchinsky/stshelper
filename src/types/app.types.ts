@@ -1,4 +1,5 @@
 export interface AppState {
+  characterSelected: CharacterName
   properties: Attribute[]
 }
 
@@ -8,4 +9,12 @@ export interface Attribute {
   image?: string
   counter: number
   max?: number
+}
+
+type CharacterName = 'ironclad' | 'silent' | 'defect' | 'watcher'
+
+export interface Character {
+  name: CharacterName
+  image: string
+  color: string
 }

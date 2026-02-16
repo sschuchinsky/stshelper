@@ -8,6 +8,7 @@
 
         <v-card-actions class="justify-center">
           <reset-button></reset-button>
+          <character-selector></character-selector>
           <wake-lock></wake-lock>
         </v-card-actions>
 
@@ -22,6 +23,7 @@
 </template>
 
 <script setup lang="ts">
+import CharacterSelector from './components/CharacterSelector.vue';
 import Counter from './components/Counter.vue';
 import ResetButton from './components/ResetButton.vue';
 import WakeLock from './components/WakeLock.vue';

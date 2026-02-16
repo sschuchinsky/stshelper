@@ -10,6 +10,7 @@ import type { AppState } from '@/types/app.types'
 
 export const useAppStore = defineStore('app', {
   state: (): AppState => ({
+    characterSelected: 'ironclad',
     properties: [
       { name: 'HP', color: 'error', counter: 0 },
       { name: 'MP', color: 'info', counter: 0 },
