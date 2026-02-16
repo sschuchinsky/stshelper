@@ -1,7 +1,7 @@
 <template>
   <v-row no-gutters class="align-center text-center">
     <v-col>
-      <v-img v-if="image" :src="`/src/assets/${image}`" height="6vh"></v-img>
+      <v-img v-if="image" :src="image" height="6vh"></v-img>
       <v-avatar v-else :color="color" size="x-large"> {{ name }}</v-avatar>
     </v-col>
     <v-col>

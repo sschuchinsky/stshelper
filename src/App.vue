@@ -3,7 +3,7 @@
     <v-main>
       <v-card class="fill-height">
         <template #image>
-          <v-img src="/src/assets/table.png" cover gradient="to bottom, rgba(0,0,0,.7), rgba(0,0,0,.7)"></v-img>
+          <v-img :src="table" cover gradient="to bottom, rgba(0,0,0,.7), rgba(0,0,0,.7)"></v-img>
         </template>
 
         <v-card-actions class="justify-center">
@@ -23,6 +23,7 @@
 <script setup lang="ts">
 import Counter from './components/Counter.vue';
 import { useAppStore } from './stores/app.store';
+import table from '@/assets/table.png'
 
 const store = useAppStore();
 </script>
