@@ -21,10 +21,9 @@ export const useAppStore = defineStore('app', {
       { name: 'strength', image: strength, counter: 0, max: 8 },
       { name: 'weak', image: weak, counter: 0, max: 3 },
       { name: 'vulnerable', image: vulnerable, counter: 0, max: 3 },
-
-      { name: 'miracle', image: miracle, counter: 0, max: 5 },
-      { name: 'shiv', image: shiv, counter: 0, max: 5 },
-    ]
+    ],
+    miracle: { name: 'miracle', image: miracle, counter: 0, max: 5 },
+    shiv: { name: 'shiv', image: shiv, counter: 0, max: 5 }
   }),
 
   actions: {

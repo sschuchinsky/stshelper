@@ -1,6 +1,8 @@
 export interface AppState {
   characterSelected: CharacterName
   properties: Attribute[]
+  miracle: Attribute
+  shiv: Attribute
 }
 
 export interface Attribute {
