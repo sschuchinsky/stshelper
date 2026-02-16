@@ -8,6 +8,7 @@
 
         <v-card-actions class="justify-center">
           <v-btn color="error" @click="store.clearAll" prepend-icon="mdi-refresh"> Reset </v-btn>
+          <wake-lock></wake-lock>
         </v-card-actions>
 
         <v-row no-gutters class="ga-7">
@@ -22,6 +23,7 @@
 
 <script setup lang="ts">
 import Counter from './components/Counter.vue';
+import WakeLock from './components/WakeLock.vue';
 import { useAppStore } from './stores/app.store';
 import table from '@/assets/table.png'
 
