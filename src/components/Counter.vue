@@ -20,7 +20,7 @@
       <v-btn icon="mdi-plus" @click="counter++"></v-btn>
     </v-col>
 
-    <v-dialog v-model="dialog" max-width="300">
+    <v-dialog v-model="dialog" max-width="300" content-class="align-self-start mt-10" scrollable>
       <v-card>
         <v-card-title class="text-center">
           <v-avatar v-if="image" :image="image"></v-avatar>
