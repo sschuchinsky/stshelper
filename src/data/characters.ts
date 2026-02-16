@@ -9,9 +9,10 @@ import watcherEnergy from "@/assets/watcher-energy.png"
 import type { Character } from "@/types/app.types"
 
 export const characters: Character[] = [
-  {
-    name: 'ironclad', image: ironclad, color: 'red', energyImage: ironcladEnergy },
+  { name: 'ironclad', image: ironclad, color: 'red', energyImage: ironcladEnergy },
   { name: 'silent', image: silent, color: 'green', energyImage: silentEnergy },
   { name: 'defect', image: defect, color: 'blue', energyImage: defectEnergy },
   { name: 'watcher', image: watcher, color: 'purple', energyImage: watcherEnergy }
 ]
+
+export const defaultCharacter: Character = { name: 'ironclad', image: ironclad, color: 'red', energyImage: ironcladEnergy }

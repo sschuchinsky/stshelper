@@ -6,16 +6,16 @@ import vulnerable from '@/assets/vulnerable.png'
 import gold from '@/assets/gold.png'
 import miracle from '@/assets/miracle.png'
 import shiv from '@/assets/shiv.png'
-import type { AppState } from '@/types/app.types'
+import type { AppState, Character } from '@/types/app.types'
+import { characters, defaultCharacter } from '@/data/characters'
 
 export const useAppStore = defineStore('app', {
   state: (): AppState => ({
-    characterSelected: 'ironclad',
+    characterSelected: defaultCharacter,
     properties: [
       { name: 'HP', color: 'error', counter: 0 },
-      { name: 'MP', color: 'info', counter: 0 },
+      { name: 'energy', image: defaultCharacter.energyImage, counter: 0 },
       { name: 'Block', image: block, counter: 0 },
-
       { name: 'gold', image: gold, counter: 0 },
 
       { name: 'strength', image: strength, counter: 0, max: 8 },
@@ -29,6 +29,10 @@ export const useAppStore = defineStore('app', {
   actions: {
     clearAll() {
       this.$reset()
+    },
+    selectCharacter(c: Character) {
+      this.characterSelected = c
+      if (this.properties[1]) { this.properties[1].image = c.energyImage }
     }
   },
 
