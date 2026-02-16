@@ -7,7 +7,7 @@
         </template>
 
         <v-card-actions class="justify-center">
-          <v-btn color="error" @click="store.clearAll" prepend-icon="mdi-refresh"> Reset </v-btn>
+          <reset-button></reset-button>
           <wake-lock></wake-lock>
         </v-card-actions>
 
@@ -23,6 +23,7 @@
 
 <script setup lang="ts">
 import Counter from './components/Counter.vue';
+import ResetButton from './components/ResetButton.vue';
 import WakeLock from './components/WakeLock.vue';
 import { useAppStore } from './stores/app.store';
 import table from '@/assets/table.png'

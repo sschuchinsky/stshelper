@@ -1,12 +1,12 @@
 <template>
-  <v-btn :color="wakeLock ? 'success' : 'primary'" @click="requestWakeLock">
-    {{ wakeLock ? 'Pantalla Bloqueada' : 'Bloquear Pantalla' }}
+  <v-btn :icon="wakeLock ? 'mdi-lock' : 'mdi-lock-open-variant'" :color="wakeLock ? 'success' : 'primary'"
+    @click="requestWakeLock">
   </v-btn>
 
-  <v-snackbar v-model="showSnackbar" color="error" timeout="4000">
+  <v-snackbar v-model="showSnackbar" :color="snackbarColor" timeout="4000" timer="white">
     {{ snackbarMessage }}
     <template v-slot:actions>
-      <v-btn variant="text" @click="showSnackbar = false">Cerrar</v-btn>
+      <v-btn variant="text" @click="showSnackbar = false" icon="mdi-close"></v-btn>
     </template>
   </v-snackbar>
 </template>
@@ -15,7 +15,9 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 
 const wakeLock = ref<WakeLockSentinel | null>(null);
+
 const showSnackbar = ref(false);
+const snackbarColor = ref('')
 const snackbarMessage = ref('');
 
 const requestWakeLock = async () => {
@@ -26,8 +28,12 @@ const requestWakeLock = async () => {
       wakeLock.value.addEventListener('release', () => {
         wakeLock.value = null;
       });
+      snackbarMessage.value = 'Pantalla siempre encendida.';
+      snackbarColor.value = 'info'
+      showSnackbar.value = true;
     } else {
       snackbarMessage.value = 'Tu navegador no soporta Wake Lock para mantener la pantalla encendida.';
+      snackbarColor.value = 'error'
       showSnackbar.value = true;
     }
   } catch (err: any) {
