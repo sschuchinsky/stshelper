@@ -17,4 +17,5 @@ export interface Character {
   name: CharacterName
   image: string
   color: string
+  energyImage: string
 }
