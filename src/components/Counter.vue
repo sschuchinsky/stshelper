@@ -8,7 +8,10 @@
       <v-btn icon="mdi-minus" @click="counter--"></v-btn>
     </v-col>
     <v-col>
-      <p class="text-h5">{{ counter }}</p>
+      <p class="text-h5">
+        {{ counter }}
+        <span v-if="max" class="font-weight-black"> / {{ max }}</span>
+      </p>
     </v-col>
     <v-col>
       <v-btn icon="mdi-plus" @click="counter++"></v-btn>
@@ -21,6 +24,7 @@ defineProps<{
   name: string,
   image?: string
   color?: string
+  max?: number
 }>();
 
 const counter = defineModel<number>('counter', { default: 0 });

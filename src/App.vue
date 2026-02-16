@@ -13,7 +13,7 @@
 
         <v-row no-gutters class="ga-7">
           <v-col v-for="item in store.properties" :key="item.name" cols="12">
-            <counter :name="item.name" :image="item.image" :color="item.color" v-model:counter="item.counter" />
+            <counter :name="item.name" :image="item.image" :color="item.color" :max="item.max" v-model:counter="item.counter" />
           </v-col>
         </v-row>
       </v-card>
