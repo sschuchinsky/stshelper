@@ -2,7 +2,9 @@
   <v-row no-gutters class="align-center text-center">
     <v-col>
       <v-img v-if="image" :src="image" height="6vh"></v-img>
-      <v-avatar v-else :color="color" size="x-large"> {{ name }}</v-avatar>
+      <v-avatar v-else  size="x-large">
+        <v-icon :color="color" :icon="icon" size="large"></v-icon>
+      </v-avatar>
     </v-col>
 
     <v-col>
@@ -48,6 +50,7 @@ const props = defineProps<{
   image?: string
   color?: string
   max?: number
+  icon?: string
 }>();
 
 const counter = defineModel<number>('counter', { default: 0 });
