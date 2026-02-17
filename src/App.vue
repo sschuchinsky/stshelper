@@ -26,13 +26,8 @@ import Counter from './components/Counter.vue';
 import ResetButton from './components/ResetButton.vue';
 import WakeLock from './components/WakeLock.vue';
 import { useAppStore } from './stores/app.store';
-import { characters } from './data/characters';
 
 const store = useAppStore();
 
-onMounted(()=>{
-  if (!store.characterSelected && characters[0]) {
-    store.selectCharacter(characters[0])
-  }
-})
+onMounted(store.init)
 </script>
