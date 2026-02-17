@@ -1,11 +1,7 @@
 <template>
   <v-app>
     <v-main>
-      <v-card class="fill-height">
-        <template #image>
-          <v-img :src="table" cover gradient="to bottom, rgba(0,0,0,.7), rgba(0,0,0,.7)"></v-img>
-        </template>
-
+      <v-card class="fill-height bg-black">
         <v-card-actions class="justify-center">
           <reset-button></reset-button>
           <character-selector></character-selector>
@@ -30,7 +26,6 @@ import Counter from './components/Counter.vue';
 import ResetButton from './components/ResetButton.vue';
 import WakeLock from './components/WakeLock.vue';
 import { useAppStore } from './stores/app.store';
-import table from '@/assets/table.png'
 import { characters } from './data/characters';
 
 const store = useAppStore();
