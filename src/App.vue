@@ -2,13 +2,17 @@
   <v-app>
     <v-main>
       <v-card class="fill-height bg-black">
-        <v-card-actions class="justify-center">
+
+        <v-card-actions class="justify-center mb-4">
           <reset-button></reset-button>
           <character-selector></character-selector>
           <wake-lock></wake-lock>
         </v-card-actions>
 
-        <v-row no-gutters class="ga-7">
+        <v-row no-gutters class="ga-6">
+          <v-col>
+            <dice-roller />
+          </v-col>
           <v-col v-for="item in store.properties" :key="item.name" cols="12">
             <counter :name="item.name" :image="item.image" :color="item.color" :max="item.max" :icon="item.icon"
               v-model:counter="item.counter" />
@@ -26,6 +30,7 @@ import Counter from './components/Counter.vue';
 import ResetButton from './components/ResetButton.vue';
 import WakeLock from './components/WakeLock.vue';
 import { useAppStore } from './stores/app.store';
+import DiceRoller from './components/DiceRoller.vue';
 
 const store = useAppStore();
 
