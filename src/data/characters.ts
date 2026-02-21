@@ -52,7 +52,10 @@ export const characters: Character[] = [
     image: defect,
     color: 'blue',
     customAttributes: [
-      { name: 'hp', icon: 'mdi-heart', color: 'red', counter: 0, max: 9 }
+      { name: 'yellow-cube', icon: 'mdi-cube', color: 'yellow', counter: 0 },
+      { name: 'blue-cube', icon: 'mdi-cube', color: 'blue', counter: 0 },
+      { name: 'purple-cube', icon: 'mdi-cube', color: 'purple', counter: 0 },
+      { name: 'red-cube', icon: 'mdi-cube', color: 'red', counter: 0 }
     ],
     hp: { name: 'hp', icon: 'mdi-heart', color: 'red', counter: 0, max: 9 }
   },
