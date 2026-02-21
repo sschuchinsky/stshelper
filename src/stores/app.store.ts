@@ -1,10 +1,11 @@
 import { defineStore } from 'pinia'
 import type { AppState, Character } from '@/types/app.types'
-import { characters, commonsProperties } from '@/data/characters'
+import { characters, commonsProperties, commonsPropertiesBars } from '@/data/characters'
 
 export const useAppStore = defineStore('app', {
   state: (): AppState => ({
     characterSelected: undefined,
+    propertiesBars: [],
     properties: []
   }),
 
@@ -21,19 +22,14 @@ export const useAppStore = defineStore('app', {
     selectCharacter(c: Character) {
       this.characterSelected = c
       this.properties = commonsProperties
-
-      const energyIndex = this.properties.findIndex(v => v.name === 'energy')
-      if (energyIndex != -1 && this.properties[energyIndex]) {
-        this.properties[energyIndex].image = c.energyImage
-      }
-
       this.properties = [...commonsProperties, ...c.customAttributes]
+      this.propertiesBars = [c.hp, ...commonsPropertiesBars]
     },
-    setCounterProperty(name: string, counter: number) {
-      const propertySearchedIndex = this.properties.findIndex(p => p.name === name)
+    setCounterBarProperty(name: string, counter: number) {
+      const propertySearchedIndex = this.propertiesBars.findIndex(p => p.name === name)
 
-      if (propertySearchedIndex != -1 && this.properties[propertySearchedIndex]) {
-        this.properties[propertySearchedIndex].counter = counter
+      if (propertySearchedIndex != -1 && this.propertiesBars[propertySearchedIndex]) {
+        this.propertiesBars[propertySearchedIndex].counter = counter
       }
     }
   },

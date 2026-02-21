@@ -1,6 +1,6 @@
 <template>
   <v-row no-gutters class="ga-1">
-    <v-col v-for="n in hpMax" :class="{ 'bg-red': n <= hp }" @click="() => { store.setCounterProperty('hp', n) }">
+    <v-col v-for="n in hpMax" :class="{ 'bg-red': n <= hp }" @click="() => { store.setCounterBarProperty('hp', n) }">
       {{ n }}
     </v-col>
   </v-row>
@@ -13,19 +13,19 @@ import { computed } from 'vue';
 const store = useAppStore()
 
 const hpMax = computed((): number => {
-  const propertySearchedIndex = store.properties.findIndex(p => p.name === 'hp')
+  const propertySearchedIndex = store.propertiesBars.findIndex(p => p.name === 'hp')
 
-  if (propertySearchedIndex != -1 && store.properties[propertySearchedIndex] && store.properties[propertySearchedIndex].max) {
-    return store.properties[propertySearchedIndex].max
+  if (propertySearchedIndex != -1 && store.propertiesBars[propertySearchedIndex] && store.propertiesBars[propertySearchedIndex].max) {
+    return store.propertiesBars[propertySearchedIndex].max
   }
   return 0
 })
 
 const hp = computed((): number => {
-  const propertySearchedIndex = store.properties.findIndex(p => p.name === 'hp')
+  const propertySearchedIndex = store.propertiesBars.findIndex(p => p.name === 'hp')
 
-  if (propertySearchedIndex != -1 && store.properties[propertySearchedIndex] && store.properties[propertySearchedIndex].max) {
-    return store.properties[propertySearchedIndex].counter
+  if (propertySearchedIndex != -1 && store.propertiesBars[propertySearchedIndex] && store.propertiesBars[propertySearchedIndex].max) {
+    return store.propertiesBars[propertySearchedIndex].counter
   }
   return 0
 })

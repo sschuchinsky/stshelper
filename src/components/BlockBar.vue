@@ -1,8 +1,8 @@
 <template>
   <v-row no-gutters class="ga-1">
-    <v-col v-for="n in MAX_BLOCK+1" :class="{ 'bg-grey': n <= block }"
-      @click="() => { store.setCounterProperty('block', n) }">
-      {{ n-1 }}
+    <v-col v-for="n in MAX_BLOCK + 1" :class="{ 'bg-grey': n <= block }"
+      @click="() => { store.setCounterBarProperty('block', n) }">
+      {{ n - 1 }}
     </v-col>
   </v-row>
 </template>
@@ -16,10 +16,10 @@ const MAX_BLOCK = 20
 const store = useAppStore()
 
 const block = computed(() => {
-  const propertySearchedIndex = store.properties.findIndex(p => p.name === 'block')
+  const propertySearchedIndex = store.propertiesBars.findIndex(p => p.name === 'block')
 
-  if (propertySearchedIndex != -1 && store.properties[propertySearchedIndex]) {
-    return store.properties[propertySearchedIndex].counter
+  if (propertySearchedIndex != -1 && store.propertiesBars[propertySearchedIndex]) {
+    return store.propertiesBars[propertySearchedIndex].counter
   }
   return 0
 })

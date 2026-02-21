@@ -1,5 +1,6 @@
 export interface AppState {
   characterSelected?: Character
+  propertiesBars: Attribute[]
   properties: Attribute[]
 }
 
@@ -20,4 +21,5 @@ export interface Character {
   color: string
   energyImage: string
   customAttributes: Attribute[]
+  hp: Attribute
 }
