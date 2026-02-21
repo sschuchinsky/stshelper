@@ -28,6 +28,13 @@ export const useAppStore = defineStore('app', {
       }
 
       this.properties = [...commonsProperties, ...c.customAttributes]
+    },
+    setCounterProperty(name: string, counter: number) {
+      const propertySearchedIndex = this.properties.findIndex(p => p.name === name)
+
+      if (propertySearchedIndex != -1 && this.properties[propertySearchedIndex]) {
+        this.properties[propertySearchedIndex].counter = counter
+      }
     }
   },
   persist: true

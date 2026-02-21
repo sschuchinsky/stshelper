@@ -20,7 +20,6 @@ import enemy from '@/assets/enemy.png'
 export const commonsProperties: Attribute[] = [
   { name: 'enemy', image: enemy, counter: 0 },
   { name: 'gold', image: gold, counter: 0 },
-  { name: 'hp', icon: 'mdi-heart', color: 'red', counter: 0 },
   { name: 'energy', counter: 0 },
   { name: 'block', image: block, counter: 0 },
 
@@ -35,7 +34,9 @@ export const characters: Character[] = [
     image: ironclad,
     color: 'red',
     energyImage: ironcladEnergy,
-    customAttributes: []
+    customAttributes: [
+      { name: 'hp', icon: 'mdi-heart', color: 'red', counter: 0, max: 11 }
+    ]
   },
   {
     name: 'silent',
@@ -43,6 +44,7 @@ export const characters: Character[] = [
     color: 'green',
     energyImage: silentEnergy,
     customAttributes: [
+      { name: 'hp', icon: 'mdi-heart', color: 'red', counter: 0, max: 9 },
       { name: 'shiv', image: shiv, counter: 0, max: 5 }
     ]
   },
@@ -51,7 +53,9 @@ export const characters: Character[] = [
     image: defect,
     color: 'blue',
     energyImage: defectEnergy,
-    customAttributes: []
+    customAttributes: [
+      { name: 'hp', icon: 'mdi-heart', color: 'red', counter: 0, max: 9 },
+    ]
   },
   {
     name: 'watcher',
@@ -59,6 +63,7 @@ export const characters: Character[] = [
     color: 'purple',
     energyImage: watcherEnergy,
     customAttributes: [
+      { name: 'hp', icon: 'mdi-heart', color: 'red', counter: 0, max: 9 },
       { name: 'miracle', image: miracle, counter: 0, max: 5 }
     ]
   }
